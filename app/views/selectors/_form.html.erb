@@ -26,8 +26,8 @@
     <%paths=Dir.glob("app/assets/images/avatars/*")%>
     <%= select_tag "selector[avatarImage]", 
       options_for_select(paths.map {|m| 
-        [asset_path(m.gsub( "app/assets/images/", "" )), m.split("/")[-1]]}), 
-      {:include_blank => true, :class => "avatar-select" } %>
+        [asset_path(m.gsub( "app/assets/images/", "" )), m.split("/")[-1]]}, @selector.avatarImage), 
+      {:include_blank => false, :class => "avatar-select" } %>
   </div>
 
   <div class="field">

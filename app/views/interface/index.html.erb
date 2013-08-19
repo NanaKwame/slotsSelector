@@ -6,7 +6,7 @@
 	<ul class= "slots">
 		<% @choices.each do |choice|%>
 		<li>
-		<%= image_tag asset_path("avatars/"+choice.avatarImage), :title =>choice.timesSelected, :id => choice.id%>
+		<%= image_tag asset_path("avatars/"+choice.avatarImage), :title =>choice.timesSelected, :id => choice.id, :dataname => choice.firstName+" "+choice.lastName%>
 		</li>
 		<%end%>
 	</ul>
@@ -16,6 +16,7 @@
 
 <div class="choice styled-border extra-pos">
 	<div class="choice-header">
+		<div class = "chosen"></div>
 		<h3>You have been chosen!</h3>
 		<h3>Do you accept?</h3>
 	</div>

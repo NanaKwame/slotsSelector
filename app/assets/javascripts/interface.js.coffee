@@ -6,14 +6,17 @@ class Controller
   constructor: () ->
     optionsid = []
     optionstimes= []
+    optionsImage = []
     $(".choice").hide()
     $(".done").hide()
     $(":radio").click @choice
     $("ul li img").each ->
       optionsid.push $(this).attr("id")
       optionstimes.push $(this).attr("title")
+      optionsImage.push $(this)
     @optionsid = optionsid
     @optionstimes = optionstimes
+    @optionsImage = optionsImage
     $('.slots').jSlots
       spinner : '#start'
       winnerNumber : 7
@@ -22,6 +25,9 @@ class Controller
 
   confirm: (final) =>
     @finalperson = final
+    chosen = "<h4>"+@optionsImage[final[0]-1].attr("dataname")+"</h4>"
+    chosen += "<img src='"+@optionsImage[final[0]-1].attr("src")+"''></img>"
+    $(".chosen").html(chosen)
     $(".spinpeeps").css("opacity", 0.3)
     $(".choice").show()
   choice: (event) =>
