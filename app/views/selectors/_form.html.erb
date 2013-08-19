@@ -1,0 +1,44 @@
+<%= form_for(@selector) do |f| %>
+  <% if @selector.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@selector.errors.count, "error") %> prohibited this selector from being saved:</h2>
+
+      <ul>
+      <% @selector.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :firstName %><br />
+    <%= f.text_field :firstName%>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastName %><br />
+    <%= f.text_field :lastName%>
+  </div>
+
+  <div class="field">
+    <%= f.label "Avatar Image" %><br />
+    <%paths=Dir.glob("app/assets/images/avatars/*")%>
+    <%= select_tag "selector[avatarImage]", 
+      options_for_select(paths.map {|m| 
+        [asset_path(m.gsub( "app/assets/images/", "" )), m.split("/")[-1]]}), 
+      {:include_blank => true, :class => "avatar-select" } %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Times Selected" %><br />
+    <%= f.number_field :timesSelected, :value=> 0%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create Avatar"%>
+  </div>
+<% end %>
+<script type="text/javascript">
+    new Selectors.Controller()
+  </script>

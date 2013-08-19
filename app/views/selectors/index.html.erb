@@ -1,0 +1,39 @@
+
+<html>
+  <div class="content">
+    <div class="peopleTable">
+      <h1 class= "logo">J U N T O S</h1>
+      <table class="round-edges" cellspacing = "1">
+        <tr>
+          <th>Exclude?</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Avatar</th>
+          <th>Times Selected</th>
+          <th colspan="3">Options</th>
+        </tr>
+
+      <% @selectors.each do |selector| %>
+        <tr>
+          <td class= "center"><%= check_box_tag("exclude", selector.id, false, class: "exclude") %></td>
+          <td class= "center"><%=selector.firstName%></td>
+          <td class= "center"><%=selector.lastName%></td>
+          <td class= "center"><%= image_tag asset_path("avatars/"+selector.avatarImage), :title =>selector.firstName%></td>
+          <td class= "center"><%=selector.timesSelected%></td>
+          <td class= "center"><%= link_to 'Show', selector %></td>
+          <td class= "center"><%= link_to 'Edit', edit_selector_path(selector) %></td>
+          <td class= "center"><%= link_to 'Destroy', selector, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </table>
+
+      <br />
+      <%= button_to 'Add People', new_selector_path, {:method => "get", :class => "addpeeps"}%> 
+      <button id= "next">Next</button>
+    </div>
+    <script type="text/javascript">
+      new Selectors.Controller()
+    </script>
+
+  </div>
+</html>

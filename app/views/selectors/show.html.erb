@@ -1,0 +1,15 @@
+
+<p id="notice"><%= notice %></p>
+<div class="showpeeps peopleTable">
+	<p><%= image_tag asset_path("avatars/"+@selector.avatarImage), :title =>@selector.firstName, :height => 30%></p>
+
+	<p><%= @selector.firstName%> <%= @selector.lastName%></p>
+
+	<p>Times Selected: <%= @selector.timesSelected%></p>
+
+	<%= link_to 'Edit', edit_selector_path(@selector) %> |
+	<%= link_to 'Back', selectors_path %>
+</div>
+
+
+

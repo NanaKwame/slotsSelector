@@ -1,0 +1,67 @@
+// Place all the styles related to the interface controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.jSlots-wrapper{
+	overflow: hidden;
+	height: 250px;
+	width: 300px;
+	display: inline-block;
+	border: 10px solid #00a0b0;
+	box-shadow: -5px -5px 5px #7fcfd7;
+	border-radius: 40px;
+	.slots{
+		padding-left: 0px;
+		li{
+			list-style-type: none;
+		}
+	}
+}
+
+.spinpeeps{
+	position: fixed;
+	top: 10%;
+	left: 30%;
+	padding: 20px;
+	background-color: #9fefe8;
+	border-radius: 20px;
+	width: 430px;
+	height: 430px;
+	text-align: center;
+	h1{
+		font-size: 40px;
+		color: #195953;
+
+	}
+
+	ul{
+		margin: 0px;
+	}
+
+	h1, p{
+		text-align: center;
+	}
+	img{
+		width: 300px;
+		height: 250px;
+		padding: 0px;
+	}
+	#start{
+		width: 250px;
+		height: 50px;
+	}
+}
+
+.styled-border{
+	width: 300px;
+	border: 5px solid #00a0b0;
+	text-align: center;
+	border-radius: 10px;
+	background-color: #9fefe8;
+}
+.extra-pos{
+	position: fixed;
+	top: 30%;
+	left: 36%;
+}
