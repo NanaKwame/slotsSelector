@@ -18,7 +18,8 @@
 //= require jquery.jSlots
 //= require_tree
 //= require select2
-
+//= require interface
+//= require selectors
 
 
 
