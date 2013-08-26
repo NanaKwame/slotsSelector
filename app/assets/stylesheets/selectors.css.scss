@@ -7,25 +7,39 @@ html{
 	background-position: center;
 	background-size: 700px 500px;
 }
+.content{
+	background-image: url(questions.jpg);
+	background-position: center;
+	background-size: 700px 500px;
+}
 .avatar-select{
 	width: 320px;
 	height: 50px;
 }
 
+
 .peopleTable{
-	position: fixed;
-	top: 10%;
-	left: 30%;
 	padding: 20px;
 	background-color: #9fefe8;
 	border-radius: 20px;
 	opacity: 0.98;
+	width: 700px;
+	margin-left: 25%;
+	margin-top: 2%;
 	.logo{
 		padding-left: 30%;
 		margin-top: 5px;
 		margin-bottom: 25px;
 		font-size: 40px;
 		color: #195953;
+		width: 700px;
+	}
+	table{
+		width: 700px;
+		img{
+			width: 120px;
+			height: 90px;
+		}
 	}
 
 	.addpeeps{
